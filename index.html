@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Viraj Jagdale | AWS Cloud Portfolio</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #0b1120;
+            color: white;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: rgba(15, 23, 42, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-size: 30px;
+            font-weight: 700;
+            color: #38bdf8;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            transition: 0.3s;
+            font-weight: 500;
+        }
+
+        nav ul li a:hover {
+            color: #38bdf8;
+        }
+
+        /* Hero Section */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 50px 8%;
+            background:
+                linear-gradient(rgba(11, 17, 32, 0.8),
+                    rgba(11, 17, 32, 0.9)),
+                url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop');
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 4px solid #38bdf8;
+            margin-bottom: 25px;
+            object-fit: cover;
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.5);
+        }
+
+        .hero-content h1 {
+            font-size: 65px;
+            margin-bottom: 15px;
+        }
+
+        .hero-content span {
+            color: #38bdf8;
+        }
+
+        .hero-content h3 {
+            font-size: 28px;
+            font-weight: 400;
+            margin-bottom: 20px;
+            color: #cbd5e1;
+        }
+
+        .hero-content p {
+            max-width: 850px;
+            margin: auto;
+            color: #cbd5e1;
+            line-height: 1.8;
+            font-size: 18px;
+        }
+
+        .hero-buttons {
+            margin-top: 35px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            margin: 10px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #38bdf8;
+            color: #000;
+        }
+
+        .btn-primary:hover {
+            background: white;
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            border: 2px solid #38bdf8;
+            color: #38bdf8;
+        }
+
+        .btn-outline:hover {
+            background: #38bdf8;
+            color: black;
+        }
+
+        section {
+            padding: 90px 8%;
+        }
+
+        section:nth-child(even) {
+            background: #111827;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 42px;
+            margin-bottom: 60px;
+            color: #38bdf8;
+        }
+
+        /* About */
+
+        .about {
+            text-align: center;
+        }
+
+        .about p {
+            max-width: 950px;
+            margin: auto;
+            font-size: 18px;
+            line-height: 1.9;
+            color: #cbd5e1;
+        }
+
+        /* Skills */
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+        }
+
+        .skill-box {
+            background: #1e293b;
+            padding: 35px;
+            border-radius: 18px;
+            transition: 0.4s;
+            border: 1px solid transparent;
+            text-align: center;
+        }
+
+        .skill-box:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 10px 30px rgba(56, 189, 248, 0.2);
+            border-color: #38bdf8;
+        }
+
+        .skill-box i {
+            font-size: 45px;
+            color: #38bdf8;
+            margin-bottom: 20px;
+        }
+
+        .skill-box h3 {
+            margin-bottom: 15px;
+            color: #38bdf8;
+        }
+
+        .skill-box p {
+            color: #cbd5e1;
+            line-height: 1.8;
+        }
+
+        /* Projects */
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: #1e293b;
+            padding: 30px;
+            border-radius: 18px;
+            transition: 0.4s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 10px 30px rgba(56, 189, 248, 0.2);
+        }
+
+        .project-card h3 {
+            color: #38bdf8;
+            margin-bottom: 15px;
+        }
+
+        .project-card p {
+            color: #cbd5e1;
+            line-height: 1.8;
+        }
+
+        .tech {
+            margin-top: 15px;
+            font-size: 15px;
+            color: #94a3b8;
+        }
+
+        /* Experience */
+
+        .experience-box {
+            background: #1e293b;
+            padding: 35px;
+            border-radius: 18px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .experience-box h3 {
+            color: #38bdf8;
+            margin-bottom: 10px;
+        }
+
+        .experience-box p {
+            color: #cbd5e1;
+            line-height: 1.9;
+        }
+
+        /* Education */
+
+        .education-box {
+            display: grid;
+            gap: 25px;
+        }
+
+        .edu-card {
+            background: #1e293b;
+            padding: 25px;
+            border-radius: 15px;
+        }
+
+        .edu-card h3 {
+            color: #38bdf8;
+            margin-bottom: 10px;
+        }
+
+        /* Certification */
+
+        .cert-box {
+            text-align: center;
+        }
+
+        .cert-box img {
+            width: 180px;
+            margin-bottom: 20px;
+        }
+
+        /* Contact */
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            margin: 15px 0;
+            font-size: 18px;
+            color: #cbd5e1;
+        }
+
+        .contact a {
+            color: #38bdf8;
+            text-decoration: none;
+        }
+
+        /* Social Icons */
+
+        .social-icons {
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            color: #38bdf8;
+            font-size: 30px;
+            margin: 0 15px;
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: white;
+        }
+
+        /* Footer */
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #020617;
+            color: #94a3b8;
+        }
+
+        /* Responsive */
+
+        @media(max-width:768px) {
+
+            nav {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero-content h1 {
+                font-size: 42px;
+            }
+
+            .hero-content h3 {
+                font-size: 22px;
+            }
+
+            .section-title {
+                font-size: 34px;
+            }
+
+            .profile-img {
+                width: 140px;
+                height: 140px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+
+    <nav>
+
+        <div class="logo">Viraj</div>
+
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+    </nav>
+
+    <!-- Hero Section -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <!-- Add your photo -->
+            <img src="profile.jpg" alt="Viraj" class="profile-img">
+
+            <h1>Hi, I'm <span>Viraj Jagdale</span></h1>
+
+            <h3>AWS Certified Cloud Practitioner | Cloud & DevOps Enthusiast</h3>
+
+            <p>
+                Passionate about AWS Cloud, DevOps,
+                and scalable cloud solutions.
+                Experienced in AWS services like
+                EC2, S3, IAM, VPC, RDS, CloudWatch, and Route 53.
+                Currently pursuing MCA and building real-world cloud projects.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#projects" class="btn btn-primary">
+                    View Projects
+                </a>
+
+                <a href="resume.pdf" class="btn btn-outline" target="_blank">
+                    Download Resume
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- About -->
+
+    <section id="about">
+
+        <h2 class="section-title">About Me</h2>
+
+        <div class="about">
+
+            <p>
+                I am an MCA student and AWS Certified Cloud Practitioner with
+                hands-on experience in deploying and managing cloud infrastructure
+                using AWS services such as EC2, S3, IAM, VPC, RDS, CloudWatch,
+                and Route 53. I enjoy working on cloud projects, learning new
+                technologies, and solving infrastructure challenges.
+                My goal is to start my career as a Cloud Engineer / DevOps Engineer
+                and contribute to secure, scalable, and cost-optimized cloud environments.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- Skills -->
+
+    <section id="skills">
+
+        <h2 class="section-title">Technical Skills</h2>
+
+        <div class="skills-container">
+
+            <div class="skill-box">
+
+                <i class="fa-brands fa-aws"></i>
+
+                <h3>AWS Cloud</h3>
+
+                <p>
+                    EC2, S3, IAM, VPC, RDS,
+                    DynamoDB, Route 53, CloudWatch
+                </p>
+
+            </div>
+
+            <div class="skill-box">
+
+                <i class="fa-solid fa-code"></i>
+
+                <h3>DevOps & Tools</h3>
+
+                <p>
+                    Git, GitHub, AWS CLI,
+                    Linux, VS Code, CI/CD Pipelines
+                </p>
+
+            </div>
+
+            <div class="skill-box">
+
+                <i class="fa-solid fa-laptop-code"></i>
+
+                <h3>Programming</h3>
+
+                <p>
+                    Python (Basics), Bash (Basics),
+                    HTML5, CSS3, JavaScript
+                </p>
+
+            </div>
+
+            <div class="skill-box">
+
+                <i class="fa-solid fa-network-wired"></i>
+
+                <h3>Networking</h3>
+
+                <p>
+                    VPC, DNS, TCP/IP, HTTP/HTTPS,
+                    Security Groups, Cloud Security
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Projects -->
+
+    <section id="projects">
+
+        <h2 class="section-title">Projects</h2>
+
+        <div class="projects">
+
+            <div class="project-card">
+
+                <h3>Stock Portfolio Management Web Application</h3>
+
+                <p>
+                    Developed and deployed a Flask-based stock portfolio web application
+                    on AWS EC2 using Gunicorn and Linux systemd services.
+                </p>
+
+                <p class="tech">
+                    Technologies: AWS EC2, Python, Flask,
+                    Linux, GitHub, HTML, CSS
+                </p>
+
+            </div>
+
+            <div class="project-card">
+
+                <h3>AWS Static Website Hosting</h3>
+
+                <p>
+                    Hosted a responsive static portfolio website using Amazon S3
+                    with bucket policies, public access configuration,
+                    and static website hosting features.
+                </p>
+
+                <p class="tech">
+                    Technologies: AWS S3, HTML5, CSS3,
+                    Cloud Hosting, Static Website Hosting
+                </p>
+
+            </div>
+
+            <div class="project-card">
+
+                <h3>Cloud Infrastructure Lab</h3>
+
+                <p>
+                    Created and managed AWS infrastructure including EC2,
+                    IAM users, VPC networking, route tables,
+                    and CloudWatch monitoring.
+                </p>
+
+                <p class="tech">
+                    Technologies: AWS EC2, IAM, VPC,
+                    Route Tables, CloudWatch
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Experience -->
+
+    <section id="experience">
+
+        <h2 class="section-title">Internship Experience</h2>
+
+        <div class="experience-box">
+
+            <h3>Tech Analyst Intern — Bitlance Tech Hub Pvt Ltd</h3>
+
+            <p>
+                Worked remotely as a Tech Analyst Intern where I handled stock market analysis,
+                algorithmic trading strategy testing, and web development tasks.
+                Collaborated with team members during weekly meetings,
+                presented progress reports, and worked with technologies like
+                Python, Django, HTML, CSS, Pine Script, and ChatGPT.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- Education -->
+
+    <section id="education">
+
+        <h2 class="section-title">Education</h2>
+
+        <div class="education-box">
+
+            <div class="edu-card">
+
+                <h3>MCA (Pursuing)</h3>
+
+                <p>
+                    Dr. D. Y. Patil Centre for Management and Research, Pune
+                    <br>
+                    2024 – 2026
+                </p>
+
+            </div>
+
+            <div class="edu-card">
+
+                <h3>B.Voc Software Development</h3>
+
+                <p>
+                    Prof. Ramkrishna More ACS College, Pune
+                    <br>
+                    Percentage: 72.36%
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Certification -->
+
+    <section>
+
+        <h2 class="section-title">Certification</h2>
+
+        <div class="cert-box">
+
+            <!-- Add your AWS badge image -->
+            <img src="aws-badge.png" alt="AWS Badge">
+
+            <div class="experience-box">
+
+                <h3>AWS Certified Cloud Practitioner (CLF-C02)</h3>
+
+                <p>
+                    Certified by Amazon Web Services with foundational knowledge
+                    in AWS Cloud concepts, architecture, pricing,
+                    security, and best practices.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Contact -->
+
+    <section id="contact">
+
+        <h2 class="section-title">Contact Me</h2>
+
+        <div class="contact">
+
+            <p>Email: virajjagadale1422@gmail.com</p>
+
+            <p>Phone: 9112333441</p>
+
+            <p>
+                LinkedIn:
+                <a href="https://www.linkedin.com/in/viraj-jagdale-8a6a49265/" target="_blank">
+    linkedin.com/in/viraj-jagdale-8a6a49265
+</a>
+            </p>
+
+            <p>
+                GitHub:
+                <a href="https://github.com/virajjagdale" target="_blank">
+    https://github.com/virajjagadale1422-bot
+</a>
+            </p>
+
+            <div class="social-icons">
+
+               <a href="https://www.linkedin.com/in/viraj-jagdale-8a6a49265/" target="_blank">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+
+               <a href="https://github.com/virajjagadale1422-bot" target="_blank">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            © 2026 Viraj Jagdale | AWS Cloud Portfolio Website
+        </p>
+
+        <p>
+            Hosted on Amazon S3 Static Website Hosting
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
